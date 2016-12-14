@@ -33,6 +33,12 @@
        created(){
           console.info(this);
       },
+      beforeUpdate(){
+          console.info("beforeUpdate");
+      },
+      updated(){
+          console.info("updated");
+      },
       computed:{
         reversedMessage(){
           return this.message.split('').reverse().join('') 
@@ -53,6 +59,7 @@
       },
     methods:{
         getNow(){
+            console.info("iiiii");
             return Date.now()
         },
         // _.debounce 是一个通过 lodash 限制操作频率的函数。

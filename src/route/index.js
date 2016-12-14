@@ -3,8 +3,9 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import Hello from '../components/Hello.vue'
-import Tpl from '../components/tpl.vue';
-import Computed from '../components/computedAttr.vue';
+import Tpl from '../components/tpl.vue'
+import Computed from '../components/computedAttr.vue'
+import StyleBind from '../components/styleBind.vue';
 
 export default new VueRouter(
     {
@@ -32,6 +33,13 @@ export default new VueRouter(
                 name: 'computed',
                 components: {
                     default: Computed
+                }
+            },
+            {
+                path: '/style',
+                name: 'style',
+                components: {
+                    default: StyleBind
                 }
             }
         ]
