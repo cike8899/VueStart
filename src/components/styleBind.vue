@@ -25,7 +25,7 @@
 
 <script>
     export default {
-        data(){
+        data() {
             return {
                 isActive: true,
                 hasError: true,
@@ -38,16 +38,16 @@
                 }
             }
         },
-        computed:{
-            otherClassObject(){
+        computed: {
+            otherClassObject() {
                 return {
                     active: this.isActive && !this.error,
-                   'text-danger': this.error && this.error.type === 'fatal',
+                    'text-danger': this.error && this.error.type === 'fatal',
                 }
             }
         },
-        watch:{
-            
+        watch: {
+
         }
     }
 </script>
