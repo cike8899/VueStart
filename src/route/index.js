@@ -6,6 +6,7 @@ import Hello from '../components/Hello.vue'
 import Tpl from '../components/tpl.vue'
 import Computed from '../components/computedAttr.vue'
 import StyleBind from '../components/styleBind.vue';
+import Condition from '../components/conditionRender.vue'
 
 export default new VueRouter(
     {
@@ -40,6 +41,13 @@ export default new VueRouter(
                 name: 'style',
                 components: {
                     default: StyleBind
+                }
+            },
+            {
+                path: '/condition',
+                name: 'condition',
+                components: {
+                    default: Condition
                 }
             }
         ]

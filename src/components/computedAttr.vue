@@ -21,6 +21,7 @@
     export default {
       //刷新后data和computed里面的方法断点都不会走
       data() {
+        //   debugger 第一次刷新页面进不了断点，通过debugger可以进入断点
           return {
               message:"Hello",
               firstName: 'Foo',
@@ -31,6 +32,7 @@
           }
       },
        created(){
+        //    debugger
           console.info(this);
       },
       beforeUpdate(){
