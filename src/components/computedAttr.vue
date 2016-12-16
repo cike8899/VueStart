@@ -15,12 +15,11 @@
         <p>{{ answer }}</p>
     </div>
 </template>
-
 <script>
-    //计算属性
-    export default {
-        //刷新后data和computed里面的方法断点都不会走
-        data() {
+//计算属性
+export default {
+    //刷新后data和computed里面的方法断点都不会走
+    data() {
             //   debugger 第一次刷新页面进不了断点，通过debugger可以进入断点
             return {
                 message: "Hello",
@@ -28,7 +27,7 @@
                 lastName: 'Bar',
                 question: '',
                 answer: 'I cannot give you an answer until you ask a question!'
-                //   fullName: 'Foo Bar'
+                    //   fullName: 'Foo Bar'
             }
         },
         created() {
@@ -70,7 +69,7 @@
             // 学习更多关于 _.debounce function (and its cousin
             // _.throttle), 参考: https://lodash.com/docs#debounce
             getAnswer: _.debounce(
-                function () {
+                function() {
                     var vm = this
                     if (this.question.indexOf('?') === -1) {
                         vm.answer = 'Questions usually contain a question mark. ;-)'
@@ -78,10 +77,10 @@
                     }
                     vm.answer = 'Thinking...'
                     axios.get('https://yesno.wtf/api')
-                        .then(function (response) {
+                        .then(function(response) {
                             vm.answer = _.capitalize(response.data.answer)
                         })
-                        .catch(function (error) {
+                        .catch(function(error) {
                             vm.answer = 'Error! Could not reach the API. ' + error
                         })
                 },
@@ -92,20 +91,24 @@
         watch: {
             firstName() {
                 this.fullName = val + ' ' + this.lastName
-            },
-            lastName() {
-                this.fullName = this.firstName + ' ' + val
-            },
-            // 如果 question 发生改变，这个函数就会运行
-            question(newQuestion) {
-                this.answer = 'Waiting for you to stop typing...'
-                this.getAnswer()
-                // console.info(this.answer);
             }
+        },
+        lastName() {
+            this.fullName = this.firstName + ' ' + val
+        },
+        // 如果 question 发生改变，这个函数就会运行
+        question(newQuestion) {
+            this.answer = 'Waiting for you to stop typing...'
+            this.getAnswer()
+                // console.info(this.answer);
         }
-    }
+}
 </script>
-
-<style scoped>
-
+<style scoped lang="less">
+.wrap {
+    .inner {
+        background: rgb(111, 44, 66);
+        color: rgb(100, 200, 255)
+    }
+}
 </style>
