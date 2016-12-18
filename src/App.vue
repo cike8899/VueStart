@@ -1,18 +1,17 @@
 <template>
-<div id="app">
-  <img src="./assets/logo.png">
-  <router-view></router-view>
-</div>
+    <div id="app">
+        <img src="./assets/logo.png">
+        <router-view></router-view>
+    </div>
 </template>
 <script>
 import Hello from './components/Hello'
 
 export default {
-  name: 'app',
-  data() {
-    return {}
-  }
-}
+    name: 'app',
+    data() {
+        return {}
+    }
 </script>
 <style lang="less">
 #app {

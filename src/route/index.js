@@ -5,7 +5,9 @@ Vue.use(VueRouter)
 import Hello from '../components/Hello.vue'
 import Tpl from '../components/tpl.vue'
 import Computed from '../components/computedAttr.vue'
-import Condition from '../components/conditionRender.vue';
+import StyleBind from '../components/styleBind.vue';
+import Condition from '../components/conditionRender.vue'
+import Parent from '../components/communication/parent.vue';
 
 export default new VueRouter(
     {
@@ -36,10 +38,24 @@ export default new VueRouter(
                 }
             },
             {
+                path: '/style',
+                name: 'style',
+                components: {
+                    default: StyleBind
+                }
+            },
+            {
                 path: '/condition',
                 name: 'condition',
                 components: {
                     default: Condition
+                }
+            },
+            {
+                path: '/parent',
+                name: 'parent',
+                components: {
+                    default: Parent
                 }
             }
         ]
