@@ -8,9 +8,31 @@
     </div>
 </template>
 <script>
+import CurrencyInput from './currencyInput.vue'
 export default {
-    name: "currency-input",
+    name: "currency-parent",
     props: ["value"],
+    components: {
+        CurrencyInput: CurrencyInput
+    },
+    data() {
+        return {
+            price: 0,
+            shipping: 0,
+            handling: 0,
+            discount: 0
+        }
+    },
+    computed: {
+        total() {
+            return ((
+                this.price * 100 +
+                this.shipping * 100 +
+                this.handling * 100 -
+                this.discount * 100
+            ) / 100).toFixed(2);
+        }
+    },
     methods: {
         updateValue(val) {
             let formattedValue = value.trim().slice(0, value.indexOf('.') + 3)
