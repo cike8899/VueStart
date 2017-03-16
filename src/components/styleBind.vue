@@ -21,6 +21,7 @@
         <div v-bind:class="[{ active: isActive }, errorClass]">
 
         </div>
+        </div>
 </template>
 
 <script>

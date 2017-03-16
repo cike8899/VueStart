@@ -1,7 +1,7 @@
 <template>
     <div>
         <input type="text" name="" ref="input" :value="value" @input="updateValue($event.target.value)" @focus="selectAll" @blur="formatValue" />
-    </div>>
+    </div>
 </template>
 <script>
 export default {

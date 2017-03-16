@@ -14,10 +14,11 @@ import SlotContainer from '../components/Slot/NamedSlot/slotContainer.vue'
 import ParentScopeSlot from '../components/Slot/ScopeSlot/parentScopeSlot.vue'
 import ScopeListParent from '../components/Slot/ScopeSlot/scopeListParent.vue'
 import DyParent from '../components/dynamicWidget/dyParent.vue'
+import tabs from '../components/tabs/tabWrapper.vue'
 
 export default new VueRouter({
     mode: 'history',
-    scrollBehavior: function(to, from, savedPosition) {
+    scrollBehavior: function (to, from, savedPosition) {
         return savedPosition || {
             x: 0,
             y: 0
@@ -94,6 +95,12 @@ export default new VueRouter({
         name: 'dyParent',
         components: {
             default: DyParent
+        }
+    }, {
+        path: '/tabs',
+        name: 'tabs',
+        components: {
+            default: tabs
         }
     }]
 })
