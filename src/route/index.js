@@ -15,6 +15,7 @@ import ParentScopeSlot from '../components/Slot/ScopeSlot/parentScopeSlot.vue'
 import ScopeListParent from '../components/Slot/ScopeSlot/scopeListParent.vue'
 import DyParent from '../components/dynamicWidget/dyParent.vue'
 import tabs from '../components/tabs/tabWrapper.vue'
+import toastTrigger from '../components/trigger/triggerToast.vue'
 
 export default new VueRouter({
     mode: 'history',
@@ -101,6 +102,12 @@ export default new VueRouter({
         name: 'tabs',
         components: {
             default: tabs
+        }
+    }, {
+        path: '/triggerToast',
+        name: 'triggerToast',
+        components: {
+            default: toastTrigger
         }
     }]
 })
