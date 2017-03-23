@@ -16,6 +16,7 @@ import ScopeListParent from '../components/Slot/ScopeSlot/scopeListParent.vue'
 import DyParent from '../components/dynamicWidget/dyParent.vue'
 import tabs from '../components/tabs/tabWrapper.vue'
 import toastTrigger from '../components/trigger/triggerToast.vue'
+import model from '../components/modelDiff/model.vue'
 
 export default new VueRouter({
     mode: 'history',
@@ -108,6 +109,12 @@ export default new VueRouter({
         name: 'triggerToast',
         components: {
             default: toastTrigger
+        }
+    }, {
+        path: '/model',
+        name: 'model',
+        components: {
+            default: model
         }
     }]
 })
